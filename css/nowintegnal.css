@@ -1,0 +1,112 @@
+.top{
+    height: .9rem;
+    background:#fff;
+
+}
+.top ul{
+    display: flex;
+    justify-content: space-around;
+    line-height: .9rem;
+}
+.main {
+
+}
+.main ul{
+    display:block;
+    border-bottom:1px solid #ccc;
+    height:.9rem;
+}
+.main ul li{
+    height: .9rem;
+    line-height: .9rem;
+    width: 16%;
+    float: left;
+    text-align: center;
+}
+/* ------------------------------------------累计积分css */
+.addUp{
+    height:1rem;
+    overflow: hidden;
+}
+.look{
+    float:left;
+    color:#fe7501;
+    font-size:.32rem;
+    padding:0 .2rem;
+    line-height: 1rem;
+}
+.addUp span{
+    float:left;
+   
+    line-height: 1rem;
+}
+.add-number{
+    float:right;
+    padding:0 .2rem;
+}
+.add-time {
+    background:#fff;
+    height:1.1rem;
+}
+.add-time ul{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    padding:.2rem 0;
+}
+.add-time ul li {
+    width: 9%;
+    text-align:center;
+    line-height: .4rem;
+}
+.time-number{
+
+}
+.time-number ul{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+}
+.time-number ul li {
+    height:1rem;
+    line-height: 1rem;
+    text-align: center;
+    width:12.5%;
+}
+
+/* -------------------------------------累计好友css */
+.friend {
+    height:1rem;
+    background: #fff;
+}
+.friend ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height:1rem;
+}
+.friend ul li {
+    min-width: 16%;
+    text-align: center;
+    font-size: 0.26rem
+}
+.friend-id {
+    height:1rem;
+
+}
+.friend-id ul{
+    display:flex;
+    justify-content: space-between;
+    line-height:1rem;
+    border-bottom:1px solid #ccc;
+}
+.friend-id ul li {
+    height: 1rem;
+    min-width: 16%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.26rem;
+}

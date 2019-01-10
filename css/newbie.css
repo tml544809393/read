@@ -1,0 +1,63 @@
+.header{
+    background: #fe7501;
+    position: relative;
+    top: .2rem;
+    left: 38%;
+    width: 1.5rem;
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+}
+.main{
+    height:2.6rem;
+    background:#fff;
+    border: 1px solid #ccc;
+    margin: 0 .2rem;
+}
+.main ul{
+    padding:.3rem .2rem;
+}
+.main ul li{
+    line-height: .5rem;
+}
+.main a{
+    color:#fe7501;
+}
+.task{
+    margin:.3rem .2rem;
+    background:#fff;
+    height:4.5rem;
+}
+.task-main{
+    height:.7rem;
+    line-height: .7rem;
+    padding:0 .2rem; 
+}
+.task-main ul {
+    overflow: hidden;
+    padding-top:.1rem;
+}
+.task-main ul li{
+    float: left;
+}
+.task-main ol li{
+    height:.7rem;
+    line-height:.7rem;
+    border-top:1px solid #ccc;
+}
+.task-main ol li span {
+    padding: .05rem .1rem;
+    background: red;
+    color: #fff;
+    margin-left: 11%;
+}
+.task-main ol li b{
+    
+}
+.sss{
+    float: right;
+    width: 36%;
+}
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/nowintegnal.css" type="text/css" />
+    <link rel="stylesheet" href="css/dropload.css" type="text/css" />
+    <title>今日积分</title>
+</head>
+<body>
+    <div class="top">
+        <ul>
+            <li>时间</li>
+            <li>获取积分途径</li>
+            <li>变动积分</li>
+            <li>变更后积分</li>
+        </ul>
+    </div>
+    <div class="main content" >
+        <div class="lists">
+
+        </div>
+        <!-- <ul>
+            <li>12.23</li>
+            <li style="width:34%">阅读</li>
+            <li style="width:19%">0.23</li>
+            <li style="width:31%">0.23</li>
+        </ul> -->
+       
+    </div>
+    
+</body>
+</html>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/dropload.min.js"></script>
+<script>
+    function getNowFormatDate() { 
+           var day = new Date(); 
+           var Month = 0; 
+           var Day = 0; 
+           var CurrentDate = ""; 
+           Month = day.getMonth()+1; 
+           Day = day.getDate(); 
+           if (Month >= 10 ) {CurrentDate += Month + "-";} 
+           else {CurrentDate += "0" + Month + "-";} 
+           if (Day >= 10 ) 
+           { 
+            CurrentDate += Day ; 
+           } 
+           else
+           { 
+            CurrentDate += "0" + Day ; 
+           } 
+
+           return CurrentDate; 
+        } 
+var nowdate = getNowFormatDate(1520324618000);
+console.log(nowdate)
+//     var date = new Date(1520324618000);
+// console.log(date);
+// M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+// D = date.getDate() + ' ';
+// console.log(D+M);
+
+$(function(){
+    // 页数
+    var page = 0;
+    // 每页展示5个
+    var size = 5;
+
+    // dropload
+    $('.content').dropload({
+        scrollArea : window,
+        loadDownFn : function(me){
+            page++;
+            // 拼接HTML
+            var result = '';
+            $.ajax({
+                type: 'post',
+                url: 'http://192.168.0.206:8080/ReadArticle/integralCtrl/getIntegralDetail.do?currentPage=' + page + '&pageSize=' + size,
+                dataType: 'json',
+                success: function(data){
+                    var arrLen = data.todayIntegral.length;
+                    if(arrLen > 0){
+                       for(var i=0; i<arrLen; i++){
+                           console.log(i)
+                           
+                           var times = data.todayIntegral[i].createTime
+                           function timestampToTime(times) {
+                            var date = new Date(times);
+                            var t = date.getMonth() +1 + '.';
+                            var d = date.getDate() + ' ';
+                            // var h = date.getHours() + ':';
+                            // var m = date.getMinutes();
+                            return t+d;
+                        }
+                        console.log(timestampToTime(times));
+                            result += `
+                            <ul>
+                                <li>${timestampToTime(times)}</li>
+                                <li style="width:34%">${data.todayIntegral[i].integralChannel}</li>
+                                <li style="width:19%">${data.todayIntegral[i].integralChange}</li>
+                                <li style="width:31%">${data.todayIntegral[i].integralFinal}</li>
+                            </ul>
+                            `
+                       }
+                    // 如果没有数据
+                    }else{
+                        // 锁定
+                        me.lock();
+                        // 无数据
+                        me.noData();
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        // 插入数据到页面，放到最后面
+                        $('.lists').append(result);
+                        // 每次数据插入，必须重置
+                        me.resetload();
+                    },1000);
+                // })
+                },
+                error: function(xhr, type){
+                    // alert('Ajax error!');
+                    // me.resetload();
+                }
+            });
+        }
+    });
+});
+</script>

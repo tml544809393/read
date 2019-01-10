@@ -1,0 +1,81 @@
+.payments{
+    height:.7rem;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    line-height: .7rem;
+    text-align: center;
+}
+.payments li{
+    width:33.33%;
+}
+.payment-opt{
+    overflow: hidden;
+}
+.payment-opt h4{
+    margin:.3rem;
+}
+.payment-opt ul{
+    display:block;
+
+}
+.payment-opt ul li {
+    float: left;
+    height: .7rem;
+    width: 28%;
+    border: 1px solid #ccc;
+    margin-left:.23rem;
+    margin-bottom:.26rem;
+    text-align: center;
+    line-height: .7rem;
+}
+.balance{
+    padding:.2rem;
+    height:.1rem;
+    line-height:.1rem;
+}
+.balance span{
+    float:left;
+}
+.balance h3{
+    float: left;
+    font-size:.4rem;
+    color:#fe7501;
+}
+.payment-sure{
+        background: #fe7501;
+        color: #fff;
+        height: .7rem;
+        line-height: .7rem;
+        text-align: center;
+        width: 93%;
+        margin: .3rem auto;
+        border-radius:5px;
+}
+.remarks{
+    width:93%;
+    margin:auto;
+    letter-spacing: .5px;
+    line-height: .4rem;
+    font-size:.26rem;
+    overflow: hidden;
+}
+.remarks em {
+    color:red;
+}
+.remarks a {
+    color:blue;
+}
+.state {
+    width:93%;
+    margin:.1rem auto;
+    padding-top:.2rem;
+    height:.8rem;
+    border-top: 1px solid #ccc
+}
+.state em{
+    float:right;
+}
+.state p{
+    padding-top:.13rem;
+}

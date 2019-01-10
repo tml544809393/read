@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/foot.css" type="text/css" />
+    <link rel="stylesheet" href="css/personal.css" type="text/css" />
+    <title>个人中心</title>
+</head>
+<body>
+        <div class="head">
+            <div class="head-img">
+                <img src="img/head.jpg">
+            </div>
+            <div class="head-number">18500002222</div>
+            <div class="head-id">
+                <h5>ID：</h5>
+                <span></span>
+            </div> 
+        </div>
+        <div class="exchange">
+                <h5>积分:</h5>
+                <span></span>
+                <button>积分兑换</button>
+        </div>
+        <div class="main">
+            <div class="main-number">
+                <span>113444</span>
+                <h5 class="border">师傅编号</h5>
+            </div>
+            <a href="nowIntegnal.html">
+                <div class="main-number">
+                    <span>113</span>
+                    <h5 class="border-bottom">今日积分</h5>
+                </div>
+            </a>
+            <a href="addIntegnal.html">
+                <div class="main-number">
+                    <span>1.44</span>
+                    <h5 class="border-bottom">累计积分</h5>
+                </div>
+            </a>
+            <div class="main-number">
+                <span>44</span>
+                <h5 class="border-bottom">累计好友</h5>
+            </div>
+            <div class="main-number">
+                <span>14</span>
+                <h5 class="border">今日阅读</h5>
+            </div>
+            <div class="main-number">
+                <span>0</span>
+                <h5 class="border">小程序</h5>
+            </div>
+            <div class="main-number">
+                <span>0</span>
+                <h5 class="border">19元奖励</h5>
+            </div>
+            <div class="main-number">
+                <span>0</span>
+                <h5 class="border">今日好友</h5>
+            </div>
+        </div>
+        <div class="reward">收徒奖励领取</div>
+        <div class="link">
+            <div class="link-img">
+                <div class="imgs"><img src="img/lianjie.png"></div>
+                <span>获取收徒链接</span>
+            </div>
+            <div class="link-img">
+                <div class="imgs"><img src="img/gongzhonghao.png"></div>
+                <span>关注公众号</span>
+            </div>
+            <!-- <div class="link-img">
+                <div class="imgs"><img src="img/xiaochengxu.png"></div>
+                <span>小程序任务</span>
+            </div> -->
+        </div>
+        <div class="notice">最新公告</div>
+        <div class="notice-main">
+            <span>2108.12.11,阅读三分一条</span>
+        </div>
+             <!-- 底部 -->
+        <div class="foot">
+            <a href="index.html">
+                <div class="foot-menu" style="border-right:1px solid #ccc;">
+                    <img class="foot-img" src="img/foot.png">
+                    <span>阅读文章</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="foot-menu">
+                    <img class="foot-imgs" src="img/per.png">
+                    <span style="color:#fe7501;">个人中心</span>
+                </div>
+            </a>
+        </div>
+</body>
+</html>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/rem.js"></script>
+<script>
+    var str='1366668888';
+    var str2 = str.substr(0,3)+"****"+str.substr(7);
+    // alert(str2)
+
+    $(document).ready(function(){
+        center()
+    })
+     function center(){
+    $.ajax({
+            url: "http://192.168.0.206:8080/ReadArticle/articleCtrl/personCenter.do",
+            type: "post",
+            data:{},
+            dataType:"json",
+            success(data){
+                var data = data.wcUser
+                var id = `<span>${data.id}</span>`
+                var img = `<img src="${data.img}">`
+                $(".head-id span").append(id)
+                $(".head-img").html(img)
+                // $.each(data.wcUser,function(index,obj){
+                //     console.log(id)
+                //     
+                // })
+               
+                
+            }
+        })
+       
+   }
+    
+</script>

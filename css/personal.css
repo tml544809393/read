@@ -1,0 +1,132 @@
+.head{
+    height:1.3rem;
+    width:100%;
+    overflow: hidden;
+
+}
+.head-img {
+    width: 1rem;
+    margin:.2rem;
+    float:left;
+}
+.head-img img {
+    display: block;
+    height: 1rem;
+    border-radius: 1rem;
+    width: 1rem;
+}
+.head-number{
+    margin-top:.3rem;
+}
+.head-id{
+    margin-top:.2rem;
+}
+.head-id h5{
+    width:.5rem;
+    float:left;
+    font-size:.28rem;
+}
+.head-id span{
+    line-height:.3rem;
+}
+.exchange {
+    width:100%;
+    height:.8rem;
+    overflow: hidden;
+}
+.exchange h5{
+    width:.75rem;
+    float:left;
+    line-height:.6rem;
+    margin-left: .3rem;
+}
+.exchange span{
+    font-size:.4rem;
+    line-height: .6rem;
+}
+.exchange button{
+    width: 1.6rem;
+    height: .53rem;
+    background: #fe7501;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+    float: right;
+    margin-right: .3rem;
+}
+.main {
+    height:2.26rem;
+    /* background:red; */
+}
+.main-number {
+    width:24.7%;
+    height:1.1rem;
+    /* background:blue; */
+    text-align: center;
+    float:left;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background:#fff;
+}
+.main-number span {
+    display:block;
+    margin-top:.2rem;
+}
+.border-bottom{
+    line-height: .52rem;
+    border-bottom: 1px solid #fe7501;
+    width: 1.2rem;
+    margin: auto;
+}
+.border{
+    line-height: .52rem;
+    width: 1.2rem;
+    margin: auto;
+}
+.reward{
+    margin:.2rem auto;
+    text-align:center;
+    height:.7rem;
+    line-height:.7rem;
+    color:#fe7501;
+    background:#fff;
+    font-size:.3rem;
+}
+.link {
+    height:2rem;
+
+}
+.link-img {
+    width:49.7%;
+    float:left;
+    background:#fff;
+    height:2rem;
+    text-align: center;
+    border-right:1px solid #ccc;
+}
+.imgs{
+    width:.8rem;
+    height:.8rem;
+    margin:.25rem auto;
+}
+.link-img img {
+    width:100%;
+}
+.notice{
+    background:#fff;
+    text-align:center;
+    margin-top:.15rem;
+    line-height: .7rem;
+    border-bottom:1px solid #ccc;
+}
+.notice-main{
+    height:1.6rem;
+    background:#fff;
+}
+.notice-main span {
+    padding:.3rem;
+    display:block;
+}
+a{
+    color:#000;
+}

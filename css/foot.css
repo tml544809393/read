@@ -1,0 +1,27 @@
+.foot {
+    height:1rem;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+
+}
+.foot a {
+    color:#000;
+}
+.foot-menu{
+    float:left;
+    width:49.8%;
+    text-align: center;
+}
+
+.foot-menu span{
+    line-height: 1rem;
+}
+.foot-img {
+    width:14%;
+}
+.foot-imgs{
+    width:13%;
+}

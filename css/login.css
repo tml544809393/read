@@ -1,0 +1,55 @@
+.login{
+    height:2rem;
+    margin-top:2rem;
+}
+.login-in {
+    position:relative;
+    width: 89%;
+    height: .6rem;
+    background: #fff;
+    margin:.2rem auto;
+    line-height: .6rem;
+    border-radius: 3px;
+}
+.login-in input{
+    padding-bottom: .1rem;
+    
+}
+.login-in label {
+    width:100%;
+    border:1px solid #ccc;
+}
+.login-in span {
+    width: .3rem;
+    background: rgb(30, 201, 52);
+    height: .6rem;
+    padding: .13rem .16rem;
+}
+.sure {
+    width:89%;
+    margin: auto;
+    background:#fe7501;
+    height:.6rem;
+    line-height:.6rem;
+    text-align:center;
+    color:#fff;
+    border-radius: 3px;
+    display:block;
+}
+#btn{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: .6rem;
+    border-radius: 2px;
+    padding: 0 .15rem;
+    background:#ccc;
+ 	width:29%;
+ 	text-align:center;
+}
+
+.error{
+	font-size:.24rem;
+	color:red;
+	margin-left:6%;
+}

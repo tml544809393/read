@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/login.css" type="text/css" />
+    
+    <title>登录</title>
+</head>
+<body>
+      <div class="login">
+         <div class="login-in">
+             <p> &nbsp&nbsp手机号码：
+                <input id="phone" maxlength="11">
+             </p>
+             <input type="text" id="btn" value="验证"  />
+         </div>
+         <div class="login-in">
+             <p> &nbsp&nbsp验证码：<input class="code"></p>
+         </div>
+         <h5 class="error">验证码错误</h5>
+      </div> 
+      
+      <div class="sure">确认绑定</div>
+</body>
+</html>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/rem.js"></script>
+<script>
+// 点击获取验证码操作
+function yan(){
+    var phone = $("#phone").val();
+    if(phone==''){
+        alert("shuru")
+    }else{
+        checkMobile();
+        console.log(phone)
+        settime()
+    }
+    
+}
+    
+function settime(val) { 
+    var countdown=50;
+    if (countdown == 0) { 
+        val.removeAttribute("disabled");    
+        val.value="验证"; 
+        countdown = 50; 
+        return
+    } else { 
+        val.setAttribute("disabled", true); 
+        val.value="重新发送(" + countdown + ")"; 
+        countdown--; 
+    } 
+    setTimeout(function() { 
+    settime(val) 
+    },1000) 
+} 
+
+
+
+    $("#btn").click(function(){
+        yan()
+        codem()
+    })
+    $(".sure").click(function(){
+        var phone = $("#phone").val();
+        var code = $(".code").val();
+        checkMobile(phone)
+        login()
+        
+    })
+    // 绑定按钮
+    function login(){
+        var phone = $("#phone").val();
+        var code = $(".code").val();
+        $.ajax({
+            url: 'http://192.168.0.206:8080/ReadArticle/registerCtrl/register.do',
+            type: 'post',
+            data:{
+                    phone:phone,
+                    code:code,
+             },
+            datatype: 'json',
+            success(data){
+                console.log(data)
+                console.log(data.is_valid)
+                var json =  $.parseJSON(data)
+                if(json.is_valid==true){
+                    console.log(json.is_valid)
+                    window.location.href="index.html"
+                }else{
+                    alert("验证失败")
+                }
+          }
+        })
+    }
+    // 发送验证码按钮
+    function codem(){
+        var phone = $("#phone").val();
+        $.ajax({
+            url: 'http://192.168.0.206:8080/ReadArticle/jpushCtrl/sendSMSCode.do',
+            type: 'post',
+            data:{
+                    phone:phone,
+             },
+            datatype: 'json',
+            success(data){
+                console.log(data)
+            }
+        })
+    }
+    // 手机号验证
+   function checkMobile(str) {
+    var re = /^1\d{10}$/
+    if (re.test(str)) {
+        // alert("确认绑定");
+    } else {
+        alert("手机号输入有误");
+    }
+}
+</script>

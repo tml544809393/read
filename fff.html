@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/jquery-2.2.4.js"></script>
+	<script src="js/rem.js"></script>
+	<title>Document</title>
+	<style type="text/css">
+		#canbox {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+		}
+		.canimg {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+		}
+		</style>
+		
+</head>
+<body>
+		<div id="myQrcode" style="display: none"></div>
+		<div id="imgDiv2"></div>
+		<canvas id="canvas"></canvas>
+	
+</body>
+</html>
+<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+<script>
+var qrcode = new QRCode('myQrcode', {
+  text: '链接地址链接地址链接地址',
+  width: 256,
+  height: 256,
+  colorDark: '#000000',
+  colorLight: '#ffffff',
+  correctLevel: QRCode.CorrectLevel.H
+});
+document.getElementById('canvas')  
+    canvas.width = 341;  
+    canvas.height = 512;  
+    var ctx = canvas.getContext('2d');  
+var img = new Image();  
+img.src = 'img/banner.png';  
+img.onload = function() {  
+  var width = img.width / 2;  
+  var height = img.height / 2;  
+  
+  // 背景图像加载后画到canvas画布上  
+  ctx.drawImage(img, 0, 0, 300, 300);  
+}  
+</script>
+
+<script type="text/javascript">
+  
+</script>

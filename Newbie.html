@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/newbie.css" type="text/css" />
+</head>
+<body>
+    <div class="header">
+       新手任务
+    </div>
+    <div class="main">
+       <ul>
+           <li>完成任务即领取相应奖励</li>
+           <li>奖励累计10元</li>
+           <li>满足条件第二天来领取</li>
+           <a href="#"><li>领取后到收支明细中查看>></li></a>
+       </ul>
+    </div>
+    <div class="task">
+        <div class="task-main">
+            <ul>
+                <li style="width:65%;">任务名</li>
+                <li style="width:25%;">奖励</li>
+                <li>操作</li>
+            </ul>
+            <ol>
+                <li>
+                    <b>手机号登录</b>
+                    <div class="sss">
+                        <em>0.5元</em>
+                        <span>已领取</span>
+                    </div>
+                </li>
+                <li>
+                    <b>累计阅读50篇文章</b>
+                    <div class="sss">
+                        <em>1.0元</em>
+                        <span>已领取</span>
+                    </div>
+                </li>
+                <li>
+                    <b>累计收徒5人</b>
+                    <div class="sss">
+                        <em>2.5元</em>
+                        <span>已领取</span>
+                    </div>
+                </li>
+                <li>
+                    <b>连续阅读10天</b>
+                    <div class="sss">
+                        <em>3.0元</em>
+                        <span>已领取</span>
+                    </div>
+                </li>
+                <li>
+                    <b>累计收徒10人</b>
+                    <div class="sss">
+                        <em>3.0元</em>
+                        <span>已领取</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+   
+</body>
+</html>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/rem.js"></script>
+<script>
+function timestampToTime(timestamp) {
+        var date = new Date(timestamp);
+        var h = date.getHours() + ':';
+        var m = date.getMinutes();
+        return h+m;
+    }
+    console.log(timestampToTime(1403058804119));
+</script>

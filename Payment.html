@@ -9,11 +9,13 @@
     <title>提现</title>
 </head>
 <body>
+    
         <ul class="payments">
-            <li style="border-bottom:2px solid #fe7501;">微信提现</li>
-            <li>支付宝提现</li>
-            <li>话费充值</li>
+            <li id="wechat" style="border-bottom:2px solid #fe7501;">微信提现</li>
+            <li id="alipay">支付宝提现</li>
+            <li id="phone">话费充值</li>
         </ul>
+        <div class="none">
         <div class="payment-opt">
             <h4>请选择提现金额</h4>
             <ul>
@@ -27,7 +29,7 @@
         </div>
         <div class="balance">
             <span>账户余额：</span>
-            <h3>2.456元</h3>
+            <h3>1.00元</h3>
         </div>
         <div class="payment-sure">确认提现</div>
         <div class="remarks">提现记录 <em> 如微信提现失败，<a href="#">请尝试点击此处，</a>重新申请提现</em></div>
@@ -47,11 +49,26 @@
                 <span>打款成功</span>
             </p>
         </div>
+    </div>
+    <div class="Support" style="display:none;margin:1rem auto;text-align:center;">暂不支持</div>
 </body>
 </html>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/rem.js"></script>
 <script>
+    $("#wechat").click(function(){
+        $(".none").show();
+        $(".Support").hide();
+    })
+    $("#alipay").click(function(){
+        $(".none").hide();
+        $(".Support").show();
+    })
+    $("#phone").click(function(){
+        $(".none").hide();
+        $(".Support").show();
+    })
+
     // 时间戳
    function add0(m){return m<10?'0'+m:m }
    function format(){
@@ -69,24 +86,40 @@
     $(".payments li").click(function() {
         $(this).css("border-bottom","2px solid rgb(254, 117, 1)").siblings().css("border-bottom","none");
        });
-
+    
     // 提现金额判断
-    var pay = 50.332;//账户余额
+    var pay = 50.20;//账户余额
     var money = '';
     if(pay>=5){
+        //    选中金额按钮
         $(".payment-opt ul li").click(function(){
             $(this).css("background","#e4e0c3").siblings().css("background","none")
-            money =$(this).val()
-            if(money >= pay){
+            money =$(this).val();
+            if(money > pay){
                 $(this).css("background","none")
+                money = '';
             }
             console.log(money)
         })
+        
     }
     $(".balance h3").html(pay+"元")
 
     // 确认提现按钮
-    $(".payment-sure").click(function(){
-        
-    })
+    function pay(){
+        $(".payment-sure").click(function(){
+            $.ajax({
+                url:"${basePath}articleCtrl/nextArticle.do",
+                type:"post",
+                data:{ },
+                dataType:"json",
+                success:function(data){
+
+                }
+            })
+        })
+  }
+   
+            
+      
 </script>

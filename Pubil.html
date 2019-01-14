@@ -25,8 +25,9 @@
     
     <h3>2、图片收徒方式</h3>
     <div class="friend">(长按保存下方图片发给还有收徒)</div>
-    <div id="cont" style="display:block;margin:auto;height:9rem;width:91%;">
-        <canvas id="canvas" style="display:none"></canvas>
+    <div id="main" style="margin:auto;height:9rem;width:91%;">
+        <img src=""
+        <canvas id="canvas" ></canvas>
     </div>
     <div id="qrcode" style="display:none;"></div>
     <div class="foot">
@@ -37,46 +38,49 @@
    
 </body>
 </html>
-<script>
-     // 复制文本内容
- function copyText() {
-      var text = document.getElementById("texts").innerText;//div内容
-      var input = document.getElementById("input");
-      input.value = text;
-      input.select(); 
-      document.execCommand("copy");
-      alert("复制成功");
-    } 
-    
-       // 动态获取二维码
-  new QRCode('qrcode', {  
-  text: 'https://www.baidu.com/', 
-  width: 128,  
-  height: 128,  
-  colorDark : '#000000',  
-  colorLight : '#ffffff',  
-  correctLevel : QRCode.CorrectLevel.H  
-}) 
-    // 画布开始
-  document.getElementById('canvas')  
-    canvas.width = 341;  
-    canvas.height = 512;  
-    var ctx = canvas.getContext('2d');  
-    var img = new Image();  
-    img.src = 'img/banner.png';  //背景图
-    var mycans = $('canvas')[1];//二维码所在的canvas
-    var codeimg = convertCanvasToImage(mycans)
 
-    $("#cont").append(codeimg)
-    img.onload = function() { 
-    var width = img.width / 2;  
-    var height = img.height / 2;  
-    ctx.drawImage(img, 0, 0, 150,200); 
-    ctx.drawImage(codeimg, 115, 270, 120, 120);
-    }
-    function convertCanvasToImage(canvas) {
-    var image = new Image();
-    image.src = canvas.toDataURL("image/png");
-    return image;
-    }
-</script>
+
+<script>
+        //复制文本内容
+        function copyText() {
+            var text = document.getElementById("texts").innerText;//div内容
+            var input = document.getElementById("input");
+            input.value = text;
+            input.select(); 
+            document.execCommand("copy");
+            alert("复制成功");
+        } 
+        //动态获取二维码
+        new QRCode('qrcode', { 
+            text: 'https://www.baidu.com/', 
+            width: 128, 
+            height: 128, 
+            colorDark : '#000000', 
+            colorLight : '#ffffff', 
+            correctLevel : QRCode.CorrectLevel.H 
+        }) 
+   
+            var canvas = document.getElementById('canvas'); 
+            canvas.width = 341; 
+            canvas.height = 512; 
+            var ctx = canvas.getContext('2d'); 
+            var img = new Image(); 
+            img.src = 'img/banner.png'; 
+            img.onload = function() { 
+                var img1 = img;
+                var mycans = $('canvas')[1];
+                var img2 = convertCanvasToImage(mycans); 
+                img2.onload = function() {
+                    ctx.drawImage(img, 0, 0, canvas.width,canvas.height); 
+                    ctx.drawImage(img2, 50, 50, 20,20); 
+                    var obj = convertCanvasToImage(canvas);
+                    $("#main").append("< img src='"+obj.src+"'/>");
+                }
+            }
+            
+            function convertCanvasToImage(canvas) {  
+                var image = new Image();  
+                image.src = canvas.toDataURL("image/png");  
+                return image;
+            }
+        </script>

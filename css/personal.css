@@ -59,28 +59,28 @@
     /* background:red; */
 }
 .main-number {
-    width:24.7%;
+    width:33%;
     height:1.1rem;
-    /* background:blue; */
     text-align: center;
     float:left;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     background:#fff;
 }
+
 .main-number span {
     display:block;
     margin-top:.2rem;
 }
 .border-bottom{
     line-height: .52rem;
-    border-bottom: 1px solid #fe7501;
-    width: 1.2rem;
+    /* border-bottom: 1px solid #fe7501; */
+    width: 2rem;
     margin: auto;
 }
 .border{
     line-height: .52rem;
-    width: 1.2rem;
+    width: 2rem;
     margin: auto;
 }
 .reward{

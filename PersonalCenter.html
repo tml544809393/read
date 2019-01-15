@@ -25,7 +25,8 @@
                 <span></span>
                 <button>积分兑换</button>
         </div>
-        <div class="main">
+                                                <!-- 非代理商id名记得添加 -->
+        <div class="main" id="noagent">
             <div class="main-number">
                 <span>113444</span>
                 <h5 class="border">师傅编号</h5>
@@ -52,16 +53,38 @@
             </div>
             <div class="main-number">
                 <span>0</span>
-                <h5 class="border">小程序</h5>
+                <h5 class="border">今日好友</h5>
             </div>
-            <div class="main-number">
-                <span>0</span>
-                <h5 class="border">19元奖励</h5>
-            </div>
+        </div>
+        <!-- 代理商页面默认隐藏 -->
+        <div class="main" id="agent" style="display:none">
             <div class="main-number">
                 <span>0</span>
                 <h5 class="border">今日好友</h5>
             </div>
+            <div class="main-number">
+                <span>44</span>
+                <h5 class="border-bottom">累计好友</h5>
+            </div>
+            <a href="addIntegnal.html">
+                <div class="main-number">
+                    <span>1.44</span>
+                    <h5 class="border-bottom">一级好友数量</h5>
+                </div>
+            </a>
+            <div class="main-number">
+                <span>14</span>
+                <h5 class="border">二级好友数量</h5>
+            </div>
+            <div class="main-number">
+                <span>14</span>
+                <h5 class="border">一级好友积分</h5>
+            </div>
+            <div class="main-number">
+                <span>14</span>
+                <h5 class="border">二级好友总积分</h5>
+            </div>
+            
         </div>
         <div class="reward">收徒奖励领取</div>
         <div class="link">
@@ -73,10 +96,7 @@
                 <div class="imgs"><img src="img/gongzhonghao.png"></div>
                 <span>关注公众号</span>
             </div>
-            <!-- <div class="link-img">
-                <div class="imgs"><img src="img/xiaochengxu.png"></div>
-                <span>小程序任务</span>
-            </div> -->
+           
         </div>
         <div class="notice">最新公告</div>
         <div class="notice-main">
@@ -102,6 +122,28 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/rem.js"></script>
 <script>
+    // 判断是否是代理商
+    var switchs = 1;
+    if(switchs == 1){  //代理商页面显示
+        $("#agent").show()
+        $("#noagent").hide()
+
+    }else{
+        $("#noagent").show()
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     var str='1366668888';
     var str2 = str.substr(0,3)+"****"+str.substr(7);
     // alert(str2)

@@ -49,7 +49,7 @@
             </div>
             <div class="main-number">
                 <span>14</span>
-                <h5 class="border">今日阅读</h5>
+                <h5 class="border">今日<em class="reads">阅读</em></h5>
             </div>
             <div class="main-number">
                 <span>0</span>
@@ -123,7 +123,7 @@
 <script src="js/rem.js"></script>
 <script>
     // 判断是否是代理商
-    var switchs = 1;
+    var switchs = 0 ;
     if(switchs == 1){  //代理商页面显示
         $("#agent").show()
         $("#noagent").hide()
@@ -132,18 +132,7 @@
         $("#noagent").show()
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
+    // 手机号中间四位隐藏
     var str='1366668888';
     var str2 = str.substr(0,3)+"****"+str.substr(7);
     // alert(str2)
@@ -163,15 +152,9 @@
                 var img = `<img src="${data.img}">`
                 $(".head-id span").append(id)
                 $(".head-img").html(img)
-                // $.each(data.wcUser,function(index,obj){
-                //     console.log(id)
-                //     
-                // })
-               
                 
             }
         })
-       
    }
     
 </script>

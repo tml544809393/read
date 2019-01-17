@@ -130,3 +130,7 @@
 a{
     color:#000;
 }
+.main-number em {
+    color:#fe7501;
+    font-size:.3rem;
+}

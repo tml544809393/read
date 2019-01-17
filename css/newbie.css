@@ -48,10 +48,16 @@
     border-top:1px solid #ccc;
 }
 .task-main ol li span {
-    padding: .05rem .1rem;
-    background: red;
-    color: #fff;
-    margin-left: 11%;
+       background: red;
+       color: #fff;
+       display: block;
+       height: .45rem;
+       width: .9rem;
+       float: right;
+       font-size: .24rem;
+       text-align: center;
+       line-height: .49rem;
+       margin: .12rem auto;
 }
 .task-main ol li b{
     

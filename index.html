@@ -42,16 +42,42 @@
             </div>
         </a>
     </div>
-    <div class="translate">教程</div>
     <input id="refreshed" value="no" type="hidden"/>
     <input id="timmerId" value="no" style="display:none"/>
+
+    <!-- 打开弹窗按钮 -->
+<button id="myBtn">打开弹窗</button>
+<!-- 弹窗 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <img src="img/one.jpg">
+      <p>长按识别二维码,加微信客服不失联</p>
+  </div>
+</div>
+<!-- 弹窗结束 -->
 </body>
 </html>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/rem.js"></script>
 <script src="js/index.js"></script>
 <script>
-    
+    // 获取弹窗
+var modal = document.getElementById('myModal');
+ var btn = document.getElementById("myBtn");
+//  var span = document.querySelector('.close');
+ btn.onclick = function() {
+     modal.style.display = "block";
+ }
+//  span.onclick = function() {
+//      modal.style.display = "none";
+//  }
+ window.onclick = function(event) {
+     if (event.target == modal) {
+         modal.style.display = "none";
+     }
+ }
+
+
  // 时间戳
             function add0(m){return m<10?'0'+m:m }
 			function format(){

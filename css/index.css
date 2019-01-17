@@ -74,7 +74,7 @@
 /* 弹窗内容 */
 .modal-content {
     background-color:#fe7501;
-    margin: 58% auto; 
+    margin: 37% auto; 
     padding: 20px;
     border: 1px solid #888;
     width:58%;
@@ -101,4 +101,25 @@
     font-size: .24rem;
     padding-top: .15rem;
     color: #fff;
+}
+.service{
+    width:30px;
+    height:30px;
+    position: relative;
+}
+.services{
+    position: absolute;
+    top: 10px;
+    left: 5.6rem;
+    height: .7rem;
+    background: #fe7501;
+    border-radius: 20px 22px 0px 0px;
+    text-align: center;
+    width: .7rem;
+    line-height: .8rem;
+    
+    color: #fff;
+    font-size: .24rem;
+   
+
 }

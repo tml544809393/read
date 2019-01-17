@@ -1,83 +1,76 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="renderer" content="webkit">
-<title>EasyHelper分页jQuery插件 - 站长素材</title>
-
-<link rel="stylesheet" href="css/easyhelper.min.css">
-<style>
-	.title {
-		text-align: center;
-		font-size: 24px;
-		margin-top: 50px;
-	}
-	.content {
-		margin: 30px auto;
-		width: 1000px;
-		height: 409px;
-		border: #dfdfdf solid 1px;
-		overflow: hidden;
-	}
-	.content li {
-		display: block;
-		height: 40px;
-		line-height: 40px;
-		text-align: center;
-		font-size: 14px;
-		border-bottom: #e8e8e8 solid 1px;
-	}
-	.page {
-		text-align: center;
-		margin-bottom: 200px;
-	}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <title>手机端文案复制</title>
+    <style>
+        body{ max-width: 640px; margin: 0 auto;}
+        .copy-pp{ color: #666; line-height: 1.2;}
+        .copy-btn{ background-color: cornflowerblue; color: #fff;}
+        .copy-text{ opacity: 0;}
+    </style>
 </head>
 <body>
 
-<div class="content">
-	<ul>
-		<li>1</li>
-		<li>1</li>
-		<li>1</li>
-		<li>1</li>
-		<li>1</li>
-		<li>2</li>
-		<li>1</li>
-		<li>1</li>
-		<li>1</li>
-		<li>1</li>
-	</ul>
+<!--使用时：请调试到手机模式：-->
+
+<div class="copy-pp" id="copy-pp">
+    即使是一块牛肉，
 </div>
-<div class="page" id="page-1"></div>
 
+<button type="button" class="copy-btn" id="copy-btn" onclick="jsCopy(this)">点击复制分享链接</button>
 
+<textarea class="copy-text" id="copy-text" value="" readonly="readonly"></textarea>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.transit.min.js"></script>
-<script src="js/es6-shim.min.js"></script>
-<script src="js/easyhelper.min.js"></script>
 <script>
+    function jsCopy(obj){
+        var u = navigator.userAgent;
+        //苹果
+        if (u.match(/(iPhone|iPod|iPad);?/i)) {
+            var copyDOM = document.getElementById("copy-pp");  //要复制文字的节点
+            var range = document.createRange();
+            // 选中需要复制的节点
+            range.selectNode(copyDOM);
+            // 执行选中元素
+            window.getSelection().addRange(range);
+            // 执行 copy 操作
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? '成功' : '失败';
+                console.log(msg);
+            } catch(err) {
+                console.log(err);
+            }
+            // 移除选中的元素
+			window.getSelection().removeAllRanges();
+			alert("复制成功")
+            // obj.innerHTML = '已复制';
+        }
 
-	// 本地模拟的内容生成函数
-	var $content = $( ".content" );
-	function createContent ( i, index ) {
-		$content.eq( index ).empty().html( ('<li>' + i + '</li>').repeat(10) );
-	}
-
-	// 调用分页功能 [ 基础版 ]
-	Helper.ui.page("#page-1", {
-		total: 2000,
-		pageSize: 10,
-		change: function ( i ) {
-			createContent( i, 0 );
-		}
-	});
-	
+        // 安卓
+        if(u.indexOf('Android') > -1 ){
+            var $copyText = document.getElementById("copy-text"),
+                $copyPP = document.getElementById("copy-pp");
+            $copyText.innerHTML = $copyPP.innerHTML.replace(/<[^>]+>/g,"");
+            $copyText.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            obj.innerHTML = '已复制';
+        }
+        // 安卓系统的UC浏览器
+        if(u.indexOf('Android') > -1 && u.indexOf('UCBrowser') > -1){
+            obj.innerHTML = '点击复制分享链接';
+            alert('若点击复制分享链接无效，请长按内容手动复制！');
+        }
+    }
 </script>
 
-</div>
 </body>
 </html>
+

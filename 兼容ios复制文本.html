@@ -25,11 +25,19 @@
     即使是一块牛肉，
 </div>
 
+
 <button type="button" class="copy-btn" id="copy-btn" onclick="jsCopy(this)">点击复制</button>
-
 <textarea class="copy-text" id="copy-text" value="" readonly="readonly"></textarea>
-
 <script>
+     window.alert = function(name){
+var iframe = document.createElement("IFRAME");
+iframe.style.display="none";
+iframe.setAttribute("src", 'data:text/plain,');
+document.documentElement.appendChild(iframe);
+window.frames[0].window.alert(name);
+iframe.parentNode.removeChild(iframe);
+}
+    
     function jsCopy(obj){
         var u = navigator.userAgent;
         //苹果
@@ -40,7 +48,7 @@
             range.selectNode(copyDOM);
             // 执行选中元素
             window.getSelection().addRange(range);
-            // 执行 copy 操作
+            // 执行 copy 操作  
             var successful = document.execCommand('copy');
             try {
                 var msg = successful ? '成功' : '失败';
@@ -53,7 +61,7 @@
 			alert("复制成功")
             // obj.innerHTML = '已复制';
         }
-
+        
         // 安卓
         if(u.indexOf('Android') > -1 ){
             var $copyText = document.getElementById("copy-text"),

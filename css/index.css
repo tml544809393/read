@@ -79,7 +79,7 @@
     padding: 20px;
     border: 1px solid #888;
     width:58%;
-    height:248px; 
+    height:230px; 
     /* border-radius:12px; */
 }
 
@@ -89,8 +89,12 @@
     font-size: .7rem;
     font-weight: bold;
     position: relative;
-    top: -3rem;
-    left: 3rem;
+    top: -2rem;
+    left: 2.87rem;
+    width: .7rem;
+}
+.close img {
+    width:100%;
 }
 .modal-content img {
     width: 200px;

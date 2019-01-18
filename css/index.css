@@ -78,16 +78,18 @@
     padding: 20px;
     border: 1px solid #888;
     width:58%;
-    height:245px; 
+    height:248px; 
     /* border-radius:12px; */
 }
 
 /* 关闭按钮 */
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: .7rem;
     font-weight: bold;
+    position: relative;
+    top: -3rem;
+    left: 3rem;
 }
 .modal-content img {
     width: 200px;

@@ -25,7 +25,7 @@
             <h5 id="points">333</h5>
         </div>
     </div>
-    <div class="time">点击开始阅读，进入后读<em> 6秒 </em>以上，返回本页面</div>
+    <div class="time">点击开始阅读，进入后读<em> 6秒 </em>以上且下拉滚动，返回本页面</div>
     <!-- <div class="start-height"></div> -->
     <div class="start" id="start" onclick="start()">开始阅读</div>
     <!-- 底部 -->
@@ -51,9 +51,10 @@
 <!-- 弹窗 -->
 <div id="myModal" class="modal">
   <div class="modal-content">
-      <img src="img/one.jpg">
+      <img src="img/follow.jpg">
       <p>长按识别二维码,加微信客服不失联</p>
   </div>
+  <span class="close">&times;</span>
 </div>
 <!-- 弹窗结束 -->
 </body>
@@ -65,13 +66,13 @@
     // 获取弹窗
 var modal = document.getElementById('myModal');
  var btn = document.getElementById("myBtn");
-//  var span = document.querySelector('.close');
+ var span = document.querySelector('.close');
  btn.onclick = function() {
      modal.style.display = "block";
  }
-//  span.onclick = function() {
-//      modal.style.display = "none";
-//  }
+ span.onclick = function() {
+     modal.style.display = "none";
+ }
  window.onclick = function(event) {
      if (event.target == modal) {
          modal.style.display = "none";

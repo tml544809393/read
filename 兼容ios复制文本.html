@@ -30,19 +30,19 @@
 <textarea class="copy-text" id="copy-text" value="" readonly="readonly"></textarea>
 <script>
      window.alert = function(name){
-var iframe = document.createElement("IFRAME");
-iframe.style.display="none";
-iframe.setAttribute("src", 'data:text/plain,');
-document.documentElement.appendChild(iframe);
-window.frames[0].window.alert(name);
-iframe.parentNode.removeChild(iframe);
-}
+        var iframe = document.createElement("IFRAME");
+        iframe.style.display="none";
+        iframe.setAttribute("src", 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    }
     
     function jsCopy(obj){
         var u = navigator.userAgent;
         //苹果
         if (u.match(/(iPhone|iPod|iPad);?/i)) {
-            var copyDOM = document.getElementById("copy-pp");  //要复制文字的节点
+            var copyDOM = document.getElementById("copy-pp");//要复制文字的节点
             var range = document.createRange();
             // 选中需要复制的节点
             range.selectNode(copyDOM);

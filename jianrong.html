@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,33 +21,27 @@
 <!--使用时：请调试到手机模式：-->
 
 <div class="copy-pp" id="copy-pp">
-    即使是一块牛肉，
+    即使是一块牛肉，也应该有自己的态度，要慎其独，要善其身，要知道精彩的人生不能只有精肉，
+    还要有适宜的肥油做调配，有雪白的肉筋做环绕，并且还要掌握跳进煎锅时的角度，姿势，以及火候，
+    才能最终成为一块优秀道地的西冷牛排~
 </div>
 
+<button type="button" class="copy-btn" id="copy-btn" onclick="jsCopy(this)">点击复制分享链接</button>
 
-<button type="button" class="copy-btn" id="copy-btn" onclick="jsCopy(this)">点击复制</button>
 <textarea class="copy-text" id="copy-text" value="" readonly="readonly"></textarea>
+
 <script>
-     window.alert = function(name){
-        var iframe = document.createElement("IFRAME");
-        iframe.style.display="none";
-        iframe.setAttribute("src", 'data:text/plain,');
-        document.documentElement.appendChild(iframe);
-        window.frames[0].window.alert(name);
-        iframe.parentNode.removeChild(iframe);
-    }
-    
     function jsCopy(obj){
         var u = navigator.userAgent;
         //苹果
         if (u.match(/(iPhone|iPod|iPad);?/i)) {
-            var copyDOM = document.getElementById("copy-pp");//要复制文字的节点
+            var copyDOM = document.getElementById("copy-pp");  //要复制文字的节点
             var range = document.createRange();
             // 选中需要复制的节点
             range.selectNode(copyDOM);
             // 执行选中元素
             window.getSelection().addRange(range);
-            // 执行 copy 操作  
+            // 执行 copy 操作
             var successful = document.execCommand('copy');
             try {
                 var msg = successful ? '成功' : '失败';
@@ -57,11 +50,11 @@
                 console.log(err);
             }
             // 移除选中的元素
-			window.getSelection().removeAllRanges();
-			alert("复制成功")
+            window.getSelection().removeAllRanges();
             // obj.innerHTML = '已复制';
+            alert("ios复制成功")
         }
-        
+
         // 安卓
         if(u.indexOf('Android') > -1 ){
             var $copyText = document.getElementById("copy-text"),
@@ -69,7 +62,8 @@
             $copyText.innerHTML = $copyPP.innerHTML.replace(/<[^>]+>/g,"");
             $copyText.select(); // 选择对象
             document.execCommand("Copy"); // 执行浏览器复制命令
-            obj.innerHTML = '已复制';
+            // obj.innerHTML = '已复制';
+            alert("安卓复制成功")
         }
         // 安卓系统的UC浏览器
         if(u.indexOf('Android') > -1 && u.indexOf('UCBrowser') > -1){
@@ -81,4 +75,3 @@
 
 </body>
 </html>
-

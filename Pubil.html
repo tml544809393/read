@@ -28,8 +28,8 @@
         <textarea id="input">copy</textarea>
         </div>
     </div>
-    <button class="copy" onclick="jsCopy(this)">复制文字收徒文案发给好友</button>
-    <textarea class="copy-text" id="copy-text" value="" readonly="readonly"style="display:none"></textarea>
+    <button class="copy copy-btn" id="copy-btn" onclick="jsCopy(this)">复制文字收徒文案发给好友</button>
+    <textarea class="copy-text" id="copy-text" value="" readonly="readonly" style="display:none;"></textarea>
     <h3>2、图片收徒方式</h3>
     <!-- <div class="friend">(长按保存还有还有下方图片发给还有还有收徒收徒)</div>
     <div id="main" style="margin:auto;height:9rem;width:91%;">
@@ -80,7 +80,7 @@ function jsCopy(obj){
             $copyText.innerHTML = $copyPP.innerHTML.replace(/<[^>]+>/g,"");
             $copyText.select(); // 选择对象
             document.execCommand("Copy"); // 执行浏览器复制命令
-            alert("IOS复制成功")
+            alert("安卓复制成功")
         }
         // 安卓系统的UC浏览器
         if(u.indexOf('Android') > -1 && u.indexOf('UCBrowser') > -1){
@@ -100,36 +100,36 @@ function jsCopy(obj){
         //     alert("复制成功");
         // } 
         //动态获取二维码
-        new QRCode('qrcode', { 
-            text: 'https://www.baidu.com/', 
-            width: 128, 
-            height: 128, 
-            colorDark : '#000000', 
-            colorLight : '#ffffff', 
-            correctLevel : QRCode.CorrectLevel.H 
-        }) 
+        // new QRCode('qrcode', { 
+        //     text: 'https://www.baidu.com/', 
+        //     width: 128, 
+        //     height: 128, 
+        //     colorDark : '#000000', 
+        //     colorLight : '#ffffff', 
+        //     correctLevel : QRCode.CorrectLevel.H 
+        // }) 
    
-            var canvas = document.getElementById('canvas'); 
-            canvas.width = 341; 
-            canvas.height = 512; 
-            var ctx = canvas.getContext('2d'); 
-            var img = new Image(); 
-            img.src = 'img/banner.png'; 
-            img.onload = function() { 
-                var img1 = img;
-                var mycans = $('canvas')[1];
-                var img2 = convertCanvasToImage(mycans); 
-                img2.onload = function() {
-                    ctx.drawImage(img, 0, 0, canvas.width,canvas.height); 
-                    ctx.drawImage(img2, 50, 50, 20,20); 
-                    var obj = convertCanvasToImage(canvas);
-                    $("#main").append("< img src='"+obj.src+"'/>");
-                }
-            }
+        //     var canvas = document.getElementById('canvas'); 
+        //     canvas.width = 341; 
+        //     canvas.height = 512; 
+        //     var ctx = canvas.getContext('2d'); 
+        //     var img = new Image(); 
+        //     img.src = 'img/banner.png'; 
+        //     img.onload = function() { 
+        //         var img1 = img;
+        //         var mycans = $('canvas')[1];
+        //         var img2 = convertCanvasToImage(mycans); 
+        //         img2.onload = function() {
+        //             ctx.drawImage(img, 0, 0, canvas.width,canvas.height); 
+        //             ctx.drawImage(img2, 50, 50, 20,20); 
+        //             var obj = convertCanvasToImage(canvas);
+        //             $("#main").append("< img src='"+obj.src+"'/>");
+        //         }
+        //     }
             
-            function convertCanvasToImage(canvas) {  
-                var image = new Image();  
-                image.src = canvas.toDataURL("image/png");  
-                return image;
-            }
+        //     function convertCanvasToImage(canvas) {  
+        //         var image = new Image();  
+        //         image.src = canvas.toDataURL("image/png");  
+        //         return image;
+        //     }
         </script>

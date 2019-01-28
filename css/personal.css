@@ -94,10 +94,10 @@
 }
 .link {
     height:2rem;
-
+	margin-top:0.1rem;
 }
 .link-img {
-    width:49.7%;
+    width:33%;
     float:left;
     background:#fff;
     height:2rem;

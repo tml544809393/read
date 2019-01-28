@@ -7,7 +7,7 @@
     text-align: center;
 }
 .payments li{
-    width:33.33%;
+    width:100%;
 }
 .payment-opt{
     overflow: hidden;

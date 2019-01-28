@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="js/rem.js"></script>
+    <style>
+        body,html{
+            background:#fff;
+        }
+        .header{
+            padding:.2rem;
+        }
+        .header p{
+            padding: .15rem 0;
+            line-height: .35rem;
+            display: none;
+            border-bottom:1px solid #ccc;
+        }
+        .header h3{
+            border-bottom: 1px solid #ccc;
+            padding: 0 0 .1rem 0;
+        }
+        .main{
+            padding:.2rem 0;
+           
+        }
+    </style>
+</head>
+<body>
+   <div class="header">
+        <div class="main">
+            <h3 id="button">1，为什么不能正常阅读？</h3>
+            <p class="button">30分钟内提供5篇文章，30分钟后会推送第2批；</p>
+        </div>
+        <div class="main">
+            <h3 id="button1">2，如何收徒？</h3>
+            <p class="button1">个人中心-收徒链接-复制文字或图片都可以</p>
+        </div>
+        <div class="main">
+            <h3  id="button2">3，收徒奖励机制是什么？</h3>
+            <p class="button2">收满5个徒弟（徒弟提现），奖励1元，收满10个徒弟（徒弟提现），奖励1.5元，徒弟阅读收益的100%贡献师傅；</p>
+        </div>
+        <div class="main">
+            <h3  id="button3">4，入口链接怎么找？</h3>
+            <p class="button3">添加任意客服二维码，客服会及时发布新的入口链接给大家；</p>
+        </div>
+        <div class="main">
+            <h3  id="button4">5，为什么阅读无收益？</h3>
+            <p class="button4">答：有效阅读标准：停留6秒且下拉3次；</p>
+        </div>
+        <div class="main">
+            <h3  id="button5">6，为什么要添加不同的客服二维码？</h3>
+            <p class="button5">只需添加任意1位客服即可，不必都添加，每位客服都会竭诚为您提供服务；</p>
+        </div>
+        <div class="main">
+            <h3  id="button6">7，每天最多能读多少篇文章？</h3>
+            <p class="button6">日均100篇；</p>
+        </div>
+   </div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+  $("#button").click(function(){
+  $(".button").toggle();
+  });
+  $("#button1").click(function(){
+  $(".button1").toggle();
+  });
+  $("#button2").click(function(){
+  $(".button2").toggle();
+  });
+  $("#button3").click(function(){
+  $(".button3").toggle();
+  });
+  $("#button4").click(function(){
+  $(".button4").toggle();
+  });
+  $("#button5").click(function(){
+  $(".button5").toggle();
+  });
+  $("#button6").click(function(){
+  $(".button6").toggle();
+ 
+  });
+});
+</script>
+

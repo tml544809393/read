@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/foot.css" type="text/css" />
 </head>
 <body>
-        <div id="myBtn" class="service"><div class="services">客服</div></div>
+    <div id="myBtn" class="service"><div class="services">客服</div></div>
     <div class="header">
         <img src="img/read.png">
         <span>阅读文章</span>
@@ -27,7 +27,7 @@
     </div>
     <div class="time">点击开始阅读，进入后读<em> 6秒 </em>以上</br>且下拉滚动，返回本页面</div>
     <!-- <div class="start" id="start" onclick="start()">开始阅读</div> -->
-    <button class="start" id="start" onclick="start()" style="display:block;">开始阅读</button>
+    <button class="start" id="inner" onclick="start()" style="display:block;">开始阅读</button>
     <!-- 底部 -->
     <div class="foot">
         <a href="#">
@@ -43,23 +43,21 @@
             </div>
         </a>
     </div>
+    <!-- 底部结束 -->
     <input id="refreshed" value="no" type="hidden"/>
     <input id="timmerId" value="no" style="display:none"/>
 
-    <!-- 打开弹窗按钮 -->
-<!-- <button >打开弹窗</button> -->
-<!-- 弹窗 -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <img src="img/follow.jpg" id="myPicture">
-      <p>长按识别二维码,加微信客服不失联</p>
-  </div>
-  <div class="close">
-      <img src="img/close.png">
-  </div>
-</div>
-<!-- 弹窗结束 -->
-
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <img src="img/follow.jpg" id="myPicture">
+            <p>长按识别二维码,加微信客服不失联</p>
+        </div>
+        <div class="close">
+            <img src="img/close.png">
+        </div>
+    </div>
+    <!-- 弹窗结束 -->
 </body>
 </html>
 <script src="js/jquery-2.2.4.js"></script>
@@ -67,6 +65,9 @@
 <script src="js/index.js"></script>
 <script src="js/random.js"></script>
 <script>
+//   var scrollHeight = $("#inner").offset().top
+ var scrollHeight=$("#inner").offset().top - $("body").scrollTop()
+    console.log(scrollHeight)
     // 获取弹窗
 var modal = document.getElementById('myModal');
  var btn = document.getElementById("myBtn");

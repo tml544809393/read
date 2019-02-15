@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css" /> -->
+    <title>阅读</title>
+    <style>
+        ul li {
+            list-style:none;
+        }
+        ol li {
+            list-style:none;
+        }
+        .top{
+            height:80px;
+            line-height:80px;
+            margin:0 30px;
+        }
+        .head{
+            float:left;
+            width:50%;
+        }
+        .head input{
+            width:100%;
+            height:30px;
+            padding:0 10px;
+            text-align: center;
+        }
+        .button {
+            float: right;
+        }
+        .button button{
+            width: 100px; 
+            height: 40px; 
+            border-width: 0px; 
+            border-radius: 3px;
+            background: #1E90FF; 
+            cursor: pointer;
+            outline: none; 
+            font-family: Microsoft YaHei; 
+            color: white; 
+            font-size: 17px; 
+        }
+        .button button:hover{
+	        background: #5599FF;
+        }
+        .main ul {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        .main ul li {
+            height: 40px;
+            line-height: 40px;
+            width:20%;
+        }
+        .main ol{
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background: #fff;
+            /* width: 100%; */
+            border-bottom: 1px solid #ccc;
+        }
+        .main ol li {
+            height: 40px;
+            line-height: 40px;
+            width:25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <!-- 头部input -->
+        <div class="head">
+            <input placeholder="">
+        </div>
+        <!-- 按钮键 -->
+        <div class="button">
+            <button>按钮0</button>
+            <button>按钮1</button>
+        </div>
+    </div>
+    <div class="main">
+        <ul>
+            <li>字符串</li>
+            <li>未完成</li>
+            <li>待完成</li>
+        </ul>
+        <!-- ol需要渲染的内容 -->
+        <ol>
+            <li>11</li>
+            <li>22</li>
+            <li>33</li>
+        </ol>
+        <ol>
+            <li>11</li>
+            <li>22</li>
+            <li>33</li>
+        </ol>
+    </div>
+   
+</body>
+</html>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+</script>

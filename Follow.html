@@ -38,11 +38,86 @@
             <img src="" id="myPicture">
         </div>
     </div>
-   
+    <table border="10"> 
+        <tr> 
+        　　<td colspan=2 align="center">员工号</td>
+        </tr> 
+        <tr> 
+        <td rowspan=2 align="center">学历</td>
+        <td align="center">专业</td>
+        </tr>
+        <tr>
+        <td colspan=2 align="center">毕业学校</td>
+        </tr> 
+        </table>
+        <form action="oneself.php" method="post">
+            <p style="font: 16px '宋体';">姓名: <input type="text" name="name" value="张三" /></p>
+            <p style="font: 16px '宋体';">账号: <input type="text" name="handset" value="13888888888" /></p>
+            <p style="font: 16px '宋体';">密码: <span id="pass" style="border: 1px solid gray; width: 200px;">888888</span> <textarea id="ei" style="display: none;" name="newpass">888888</textarea> <input id="btt" onclick="edit();" type="button" name="btt" value="编 辑" /> <input id="of" style="display: none;" onclick="off();" type="button" name="of" value="取 消" /></p>
+            </form>
 </body>
 </html>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/rem.js"></script>
 <script src="js/random.js"></script>
+<script>
+    hand function(e){
+
+    }
+    widnow.addEventListener('scroll',this.hand)
+    // var a,b;
+    // (function(){
+    //     alert(a);
+    //     alert(b);
+    //     var a=b=3;//var a=3; 全局变量b=3 
+    //     alert(a);
+    //     alert(b);
+
+    // })()
+    // alert(a);
+    // alert(b);//3
+    // //输出结果//
+    //修改密码
+//抓取到的数据
+function edit() {
+document.getElementById("ps").style.display = "none";
+document.getElementById("pw").style.display = "";  
+document.getElementById("of").style.display = "";
+var butt = document.getElementById("btt");
+butt.value = "修 改";
+butt.onclick = function () {
+save();//第二次单击的时候执行这个函数
+};
+}
+//取消健 
+function off() {
+var pass = document.getElementById('ps');
+var pws = document.getElementById("pw");
+var butt = document.getElementById("btt");
+document.getElementById("of").style.display = "none",
+butt.value = "编 辑";
+pws.style.display = "none";
+pass.innerHTML = pws.value;
+pass.style.display = "";
+butt.onclick = function () {
+edit();//还原第一次单击的时候执行的函数
+};
+}
+//编辑之后的状态
+function save() {
+var pass = document.getElementById('ps');
+
+var pws = document.getElementById("pw");
+var butt = document.getElementById("btt");
+butt.setAttribute("type","submit");
+butt.value = "编 辑";
+pws.style.display = "none";
+pass.innerHTML = pws.value;
+pass.style.display = "";
+butt.onclick = function () {
+edit();//还原第一次单击的时候执行的函数
+};
+}
+</script>
 
 
